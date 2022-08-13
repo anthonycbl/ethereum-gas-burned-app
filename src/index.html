@@ -4,13 +4,21 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ethereum Gas Burned</title>
+    <link rel="stylesheet" href="style.css">
  <body>
     <h1>Your Ethereum Wallet History</h1> 
     <form>
         <input type="text" class="address"/>
+        <label for="ascending">Ascending Order</label>
+        <input id="ascending" type="radio" name="asc-desc" value="asc" checked>          
+        <label for="descending">Descending Order</label>
+        <input id="descending" type="radio" name="asc-desc" value="desc">
+
         <input type="submit" value = "Display Stats"/>
+        
     </form> 
     <div id="app"></div>
-    <script src="main.js"></script>
+    <script src="main.js" type="module"></script>
 </body>
 </html>
