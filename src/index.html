@@ -4,23 +4,20 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ethereum Gas Burned</title>
+    <title>Ethereum Gas Fees</title>
     <link rel="stylesheet" href="style.css">
  <body>
-    <h1>Ethereum Wallet History</h1> 
+    <h1>Ethereum Gas Fees</h1> 
     <form>
         <input type="text" class="address" placeholder="Enter Ethereum Address"/>
-        <label for="startDate">From:</label>
-        <input type="date" id="startDate" name="startDate">
-        <label for="endDate">To:</label>
-        <input type="date" id="endDate" name="endDate">
-        <label for="ascending">Ascending Order</label>
-        <input id="ascending" type="radio" name="asc-desc" value="asc" checked>          
-        <label for="descending">Descending Order</label>
+        <br>
+        <label for="ascending">Transactions in Ascending Order</label>
+        <input id="ascending" type="radio" name="asc-desc" value="asc" checked>   
+        <br>       
+        <label for="descending">Transactions in Descending Order</label>
         <input id="descending" type="radio" name="asc-desc" value="desc">
-
-        <input type="submit" value = "Display Stats"/>
-        
+        <br>
+        <input type="submit" value = "Show me Total Fees"/>
     </form> 
     <div id="app"></div>
     <script src="main.js" type="module"></script>

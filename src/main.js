@@ -4,21 +4,26 @@ const form = document.querySelector("form");
 const addressInput = document.querySelector(".address");
 const txnOrder = document.querySelector("#ascending");
 
-function turnResponseIntoJS(res) {
-  return Promise.all(res.map((res) => res.json()));
+function turnResponseIntoJS(responses) {
+  return Promise.all(responses.map((response) => response.json()));
 }
 
 function handleData(data) {
+  const date = new Date();
+  const offset = date.getTimezoneOffset();
+  console.log(offset);
   const ethPrice = data[0].ethereum.usd;
   const txnArray = data[1].result;
+
   const totalFees = txnArray
     .map((txn) => txn.gasPrice * txn.gasUsed * Math.pow(10, -18))
     .reduce((acc, current) => acc + current);
   const totalFeesInUsd = totalFees * ethPrice;
 
-  let html = `<h3>You've spent ${totalFees.toFixed(4)} ETH on gas</h3>
-  <h3>That's ${totalFeesInUsd.toFixed(2)} 
-  USD with currently 1 ETH being worth ${ethPrice} USD</h3>
+  let html = `<h3>This address has spent <span>${totalFees.toFixed(5)} 
+  ETH</span> on gas fees.</h3>
+  <h3>That is currently worth <span>${totalFeesInUsd.toFixed(2)} USD</span>, 
+  with 1 ETH being worth ${ethPrice} USD</h3>
   `;
 
   html += "<h2>Transaction History</h2>";
@@ -33,11 +38,12 @@ function handleData(data) {
     const humanDateFormat = dateObject.toLocaleString();
 
     html += `
+    <div class="transaction">
     <p> Timestamp: ${humanDateFormat}</p>
     <p> Transaction Hash: ${txn.hash}</p>
     <p> Method: ${txn.functionName === "" ? txn.methodId : txn.functionName}</p>
     <p> Transaction Fee: ${transactionFee.toFixed(7)} ETH</p>
-    <hr>
+    </div>
     `;
   });
 
