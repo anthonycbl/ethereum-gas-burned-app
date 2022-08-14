@@ -22,11 +22,11 @@ function handleData(data) {
   ${totalFees.toFixed(5)} ETH</span> on gas fees.</h3>
   <h3>That is currently worth <span class="highlight">
   ${totalFeesInUsd.toFixed(2)} USD</span>, 
-  with 1 ETH being worth ${ethPrice} USD</h3>
+  with 1 ETH being worth ${ethPrice} USD.</h3>
   `;
 
   // output individual transaction data to html
-  html += "<h2>Transaction History</h2>";
+  html += "<h2>Transaction History:</h2>";
   txnArray.forEach((txn) => {
     // convert Unix time to readable format
     const unixTimeStamp = txn.timeStamp;

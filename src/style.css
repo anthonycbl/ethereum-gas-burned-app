@@ -1,35 +1,20 @@
 body {
   font-family: "Comic Sans MS";
-  background-color: rgba(201, 190, 190, 0.514);
+  background-image: linear-gradient(
+    to right,
+    rgb(255, 255, 255),
+    rgb(242, 222, 239)
+  );
 }
 
 header {
-  position: relative;
   border-bottom: 1px black solid;
-}
-
-header:before {
-  content: " ";
-  display: block;
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  opacity: 0.15;
-  background-image: url("https://static.archipelago.art/tokens/orig/artblocks/78/000352");
-  background-repeat: no-repeat;
-  background-position: 0% 0;
-  background-size: cover;
-}
-
-header > div {
-  position: relative;
+  margin: -10px -10px 5px -10px;
 }
 
 h1 {
   text-align: center;
-  font-family: "Comic Sans MS";
+  font-family: "Arial Narrow";
   font-size: 500%;
 
   background-image: linear-gradient(
@@ -86,6 +71,7 @@ h2 {
 }
 
 .transaction {
+  overflow-wrap: break-word;
   border-bottom: 1px dotted black;
   margin: 10px 5px 10px 5px;
   padding: 2px 10px 5px;
