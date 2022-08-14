@@ -26,7 +26,7 @@ p {
   font-size: 16px;
 }
 
-span {
+.highlight {
   color: rgb(255, 55, 0);
 }
 
@@ -51,6 +51,7 @@ input[type="submit"] {
   margin: 10px;
   font-size: 16px;
   font-family: "Comic Sans MS";
+  color: rgb(255, 55, 0);
   width: 200px;
   padding: 5px;
 }
@@ -59,4 +60,52 @@ input[type="submit"] {
   border: 2px dotted black;
   margin: 5px;
   padding: 10px;
+}
+
+.fade-out {
+  animation: fadeOut 2s;
+  -webkit-animation: fadeOut 2s;
+  -moz-animation: fadeOut 2s;
+  -o-animation: fadeOut 2s;
+  -ms-animation: fadeOut 2s;
+}
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@-webkit-keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@-moz-keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@-o-keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@-ms-keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
 }
