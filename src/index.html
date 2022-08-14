@@ -7,9 +7,13 @@
     <title>Ethereum Gas Burned</title>
     <link rel="stylesheet" href="style.css">
  <body>
-    <h1>Your Ethereum Wallet History</h1> 
+    <h1>Ethereum Wallet History</h1> 
     <form>
-        <input type="text" class="address"/>
+        <input type="text" class="address" placeholder="Enter Ethereum Address"/>
+        <label for="startDate">From:</label>
+        <input type="date" id="startDate" name="startDate">
+        <label for="endDate">To:</label>
+        <input type="date" id="endDate" name="endDate">
         <label for="ascending">Ascending Order</label>
         <input id="ascending" type="radio" name="asc-desc" value="asc" checked>          
         <label for="descending">Descending Order</label>
