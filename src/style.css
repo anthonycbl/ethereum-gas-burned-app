@@ -14,9 +14,9 @@ header {
 
 h1 {
   text-align: center;
-  font-family: "Arial Narrow";
-  font-size: 500%;
-
+  font-family: "Arial";
+  font-weight: bold;
+  font-size: 400%;
   background-image: linear-gradient(
     to left,
     red,
@@ -51,6 +51,9 @@ form {
   width: 500px;
   margin: 5px;
 }
+
+
+
 
 input[type="radio"] {
   margin: 5px;
@@ -124,3 +127,8 @@ h2 {
     opacity: 0;
   }
 }
+
+@media (max-width: 600px) {
+  .address {
+  width: 300px;
+ }
