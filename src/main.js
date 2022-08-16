@@ -16,7 +16,7 @@ function handleData(data) {
   // calculate total gas fee and output html
   const totalFees = txnArray
     .map((txn) => txn.gasPrice * txn.gasUsed * Math.pow(10, -18))
-    .reduce((acc, current) => acc + current);
+    .reduce((acc, current) => acc + current, 0);
   const totalFeesInUsd = totalFees * ethPrice;
   let html = `<h3>This address has spent <span class="highlight">
   ${totalFees.toFixed(5)} ETH</span> on gas fees.</h3>
@@ -63,11 +63,11 @@ function addressLookup(event) {
   // add loading text
   targetElement.innerHTML = "<h2>Loading...</h2>";
 
-  // define endpoint for Ethereum price
+  // define endpoint to get Ethereum price
   const priceEndpoint =
     "https://api.coingecko.com/api/v3/simple/price?ids=ethereum&vs_currencies=usd";
 
-  // define endpoint for Transaction data
+  // define endpoint to get Transaction data for user-specified address
   const url = "https://api.etherscan.io/api";
   const parameters = `?module=account&action=txlist&address=${
     addressInput.value
