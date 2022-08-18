@@ -51,9 +51,13 @@ function handleData(data) {
 
   // add css effect to have the fees fade out
   const highlightSpan = document.querySelectorAll(".highlight");
-  highlightSpan.forEach((span) => {
-    span.addEventListener("mouseover", () => {
-      span.classList.add("fade-out");
+  textDisappear(highlightSpan);
+}
+
+function textDisappear(domNodeArray) {
+  domNodeArray.forEach((domNode) => {
+    domNode.addEventListener("mouseover", () => {
+      domNode.classList.add("fade-out");
     });
   });
 }
