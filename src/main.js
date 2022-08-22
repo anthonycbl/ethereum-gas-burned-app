@@ -55,6 +55,7 @@ function handleData(data) {
 }
 
 function textDisappear(domNodeArray) {
+  // go through every element of DOM node array and add disappearing css style
   domNodeArray.forEach((domNode) => {
     domNode.addEventListener("mouseover", () => {
       domNode.classList.add("fade-out");
