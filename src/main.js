@@ -8,6 +8,15 @@ function turnResponseIntoJS(responses) {
   return Promise.all(responses.map((response) => response.json()));
 }
 
+function textDisappear(domNodeArray) {
+  // go through every element of DOM node array and add disappearing css style
+  domNodeArray.forEach((domNode) => {
+    domNode.addEventListener("mouseover", () => {
+      domNode.classList.add("fade-out");
+    });
+  });
+}
+
 function handleData(data) {
   // define each dataset from dual API fetch
   const ethPrice = data[0].ethereum.usd;
@@ -52,15 +61,6 @@ function handleData(data) {
   // add css effect to have the fees fade out
   const highlightSpan = document.querySelectorAll(".highlight");
   textDisappear(highlightSpan);
-}
-
-function textDisappear(domNodeArray) {
-  // go through every element of DOM node array and add disappearing css style
-  domNodeArray.forEach((domNode) => {
-    domNode.addEventListener("mouseover", () => {
-      domNode.classList.add("fade-out");
-    });
-  });
 }
 
 function addressLookup(event) {
